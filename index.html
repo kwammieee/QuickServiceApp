@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quick Service</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#ececec;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+      width:100%;
+      height:90px;
+      background:#001d75;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:0 70px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:15px;
+    }
+
+    .logo img{
+      width:65px;
+    }
+
+    .logo h1{
+      color:white;
+      font-size:38px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:40px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:white;
+      font-size:24px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#8ea4ff;
+    }
+
+    .download-btn{
+      padding:16px 30px;
+      background:#5d7cff;
+      border-radius:15px;
+      color:white !important;
+    }
+
+    .download-btn:hover{
+      background:#3f5fe6;
+    }
+
+    /* HERO SECTION */
+
+    .hero{
+      width:100%;
+      min-height:700px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:70px;
+      padding:70px;
+    }
+
+    .hero-image{
+      flex:1;
+    }
+
+    .hero-image img{
+      width:100%;
+      border-radius:20px;
+      object-fit:cover;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .hero-content{
+      flex:1;
+    }
+
+    .hero-content h1{
+      font-size:70px;
+      color:#001d75;
+      line-height:1.2;
+      margin-bottom:40px;
+    }
+
+    .book-btn{
+      display:inline-block;
+      padding:18px 45px;
+      background:#5d7cff;
+      border-radius:15px;
+      color:white;
+      font-size:28px;
+      font-weight:bold;
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    .book-btn:hover{
+      background:#3f5fe6;
+      transform:translateY(-3px);
+    }
+
+    /* SERVICES */
+
+    .services{
+      padding:80px 50px;
+      text-align:center;
+    }
+
+    .section-title{
+      font-size:48px;
+      color:#5d7cff;
+      margin-bottom:60px;
+    }
+
+    .service-container{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:40px;
+    }
+
+    .service-card{
+      width:270px;
+      background:white;
+      padding:40px 25px;
+      border-radius:15px;
+      transition:0.3s;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .service-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .service-card i{
+      font-size:70px;
+      color:#2f6da4;
+      margin-bottom:25px;
+    }
+
+    .service-card h2{
+      color:#5d7cff;
+      margin-bottom:20px;
+      font-size:32px;
+    }
+
+    .service-card p{
+      font-size:20px;
+      line-height:1.5;
+      font-weight:bold;
+    }
+
+    /* WHY CHOOSE US */
+
+    .why{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:70px;
+      padding:100px 70px;
+    }
+
+    .why-image{
+      flex:1;
+    }
+
+    .why-image img{
+      width:100%;
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .why-content{
+      flex:1;
+      text-align:center;
+    }
+
+    .why-content h2{
+      font-size:48px;
+      color:#5d7cff;
+      margin-bottom:30px;
+    }
+
+    .why-content p{
+      font-size:35px;
+      line-height:1.4;
+      margin-bottom:50px;
+    }
+
+    .features{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:35px;
+      margin-bottom:50px;
+    }
+
+    .feature{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      text-align:left;
+    }
+
+    .feature i{
+      font-size:40px;
+    }
+
+    .feature span{
+      font-size:25px;
+      font-weight:bold;
+    }
+
+    .learn-btn{
+      display:inline-block;
+      padding:18px 45px;
+      background:#001d75;
+      border-radius:20px;
+      color:white;
+      font-size:24px;
+      font-weight:bold;
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    .learn-btn:hover{
+      background:#000f42;
+    }
+
+    /* APP SECTION */
+
+    .app-section{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:80px;
+      padding:100px 70px;
+    }
+
+    .app-image{
+      flex:1;
+      text-align:center;
+    }
+
+    .app-image img{
+      width:90%;
+    }
+
+    .app-content{
+      flex:1;
+    }
+
+    .app-content small{
+      font-size:22px;
+      font-weight:bold;
+    }
+
+    .app-content h1{
+      font-size:65px;
+      line-height:1.3;
+      margin:20px 0 40px;
+    }
+
+    .blue-text{
+      color:#4d73ff;
+    }
+
+    .store-buttons{
+      display:flex;
+      gap:20px;
+      margin-bottom:40px;
+      flex-wrap:wrap;
+    }
+
+    .store-buttons img{
+      width:240px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .store-buttons img:hover{
+      transform:scale(1.05);
+    }
+
+    .users{
+      font-size:60px;
+      font-weight:bold;
+    }
+
+    .users p{
+      font-size:28px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:1000px){
+
+      .hero,
+      .why,
+      .app-section{
+        flex-direction:column;
+      }
+
+      .hero-content h1,
+      .app-content h1{
+        font-size:50px;
+        text-align:center;
+      }
+
+      .hero-content{
+        text-align:center;
+      }
+
+      .features{
+        grid-template-columns:1fr;
+      }
+
+      .navbar{
+        flex-direction:column;
+        height:auto;
+        padding:20px;
+        gap:20px;
+      }
+
+      .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .why-content p{
+        font-size:25px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+      <img src="images/logo.png" alt="">
+      <h1>Quick Service</h1>
+    </div>
+
+    <div class="nav-links">
+
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About Us</a>
+
+      <a href="#download" class="download-btn">
+        Download App
+      </a>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO SECTION -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-image">
+      <img src="images/hero.png" alt="">
+    </div>
+
+    <div class="hero-content">
+
+      <h1>
+        Your, Home,<br>
+        Our Priority,<br>
+        Reliable Services,<br>
+        Just a Tap Away
+      </h1>
+
+      <a href="#services" class="book-btn">
+        Book Now
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section class="services" id="services">
+
+    <h1 class="section-title">
+      /SERVICES/
+    </h1>
+
+    <div class="service-container">
+
+      <div class="service-card">
+        <i class="fa-solid fa-toolbox"></i>
+        <h2>Home Repair</h2>
+        <p>
+          Trusted professionals for stress-free
+          home repairs and maintenance.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <i class="fa-solid fa-plug"></i>
+        <h2>Electrician</h2>
+        <p>
+          Fast and licensed electrical repairs
+          for your home.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <i class="fa-solid fa-broom"></i>
+        <h2>Cleaner</h2>
+        <p>
+          Detailed and eco-friendly cleaning
+          for a spotless home.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <i class="fa-solid fa-wrench"></i>
+        <h2>Plumber</h2>
+        <p>
+          Quality plumbing repairs and
+          installations anytime.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <i class="fa-solid fa-paint-roller"></i>
+        <h2>Paint</h2>
+        <p>
+          Professional painting services
+          with perfect finishing.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- WHY CHOOSE US -->
+
+  <section class="why" id="about">
+
+    <div class="why-image">
+      <img src="images/team.png" alt="">
+    </div>
+
+    <div class="why-content">
+
+      <h2>/Why Choose Us/</h2>
+
+      <p>
+        We simplify home maintenance.
+        Connect with trusted local
+        professionals anytime.
+      </p>
+
+      <div class="features">
+
+        <div class="feature">
+          <i class="fa-solid fa-square-check"></i>
+          <span>Expertise and Experience</span>
+        </div>
+
+        <div class="feature">
+          <i class="fa-solid fa-square-check"></i>
+          <span>Secure Online Payment</span>
+        </div>
+
+        <div class="feature">
+          <i class="fa-solid fa-square-check"></i>
+          <span>Quality Workership</span>
+        </div>
+
+        <div class="feature">
+          <i class="fa-solid fa-square-check"></i>
+          <span>Anytime Service</span>
+        </div>
+
+        <div class="feature">
+          <i class="fa-solid fa-square-check"></i>
+          <span>Service Tracking</span>
+        </div>
+
+      </div>
+
+      <a href="#download" class="learn-btn">
+        LEARN MORE
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- APP SECTION -->
+
+  <section class="app-section" id="download">
+
+    <div class="app-image">
+      <img src="images/app.png" alt="">
+    </div>
+
+    <div class="app-content">
+
+      <small>The Best Quick Service App</small>
+
+      <h1>
+        Your
+        <span class="blue-text">
+          Ultimate Quick Service
+        </span>
+        Application Solution
+      </h1>
+
+      <div class="store-buttons">
+
+        <img src="images/googleplay.png" alt="">
+        <img src="images/appstore.png" alt="">
+
+      </div>
+
+      <div class="users">
+        1M+
+        <p>Active Users</p>
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+</html>
+```
